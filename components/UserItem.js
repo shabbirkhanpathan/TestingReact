@@ -13,26 +13,30 @@ const UserItem = ({ item }) => (
 
 const styles = StyleSheet.create({
   userContainer: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'center',
     padding: 10,
     borderBottomWidth: 1,
-    borderBottomColor: '#ccc'
+    borderBottomColor: '#ccc',
+    marginBottom:20
   },
   userImage: {
-    width: 50,
-    height: 50,
+    width: 200,
+    height: 200,
     borderRadius: 25,
-    marginRight: 10
+    flex:1
   },
   userInfoContainer: {
     flex: 1
   },
   userName: {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    textAlign:'center',
+    marginVertical: 5
   },
   userEmail: {
-    color: '#666'
+    color: '#666',
+    textAlign:'center'
   }
 });
 
