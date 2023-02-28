@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, FlatList } from 'react-native';
-import UserItem from 'components/UserItem';
+import UserItem from './components/UserItem';
 
 function App() {
   const [users, setUsers] = useState([]);
