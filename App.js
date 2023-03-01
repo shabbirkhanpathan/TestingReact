@@ -1,15 +1,64 @@
 import React, { useState } from "react";
-import {View, Text, TextInput, Button} from "react-native";
+import { SafeAreaView, Text, TextInput, Button, StyleSheet, View } from "react-native";
 
-function App ()  {
+
+function App() {
   const [name, setName] = useState();
-  return(
-    <View style={{marginHorizontal:20}}>
-      <Text> Hello </Text> 
-      <Text>Type Your Name: {name} </Text>
-     <TextInput style={{borderWidth:2, borderColor:'blue'}} placeholder="name" value={name} onChangeText={(text)=>setName(text)}/>
-     <Button title="Clear Input" onPress={()=>setName()}/>
-    </View>
-  )}
+  const [pass, setPass] = useState();
+  const [email, setEmail] = useState();
+  const [display, setDisplay] = useState(false);
 
+  const resetFormData = () => {
+    setDisplay(false);
+    setName("");
+    setPass("");
+    setEmail("");
+  }
+  return (
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.text}>Form Validation</Text>
+      <TextInput style={styles.textInput} placeholder="your name" onChangeText={(text) => setName(text)} value={name} />
+      <TextInput style={styles.textInput} placeholder="your name" onChangeText={(text) => setPass(text)} secureTextEntry={true} value={pass} />
+      <TextInput style={styles.textInput} placeholder="your name" onChangeText={(text) => setEmail(text)} value={email} />
+      <View style={{ marginBottom: 10 }}>
+        <Button title="Display Details" color={"green"} onPress={() => setDisplay(true)} />
+      </View>
+
+      <Button title="Clear Details" color={"blue"} onPress={() => resetFormData()} />
+      { 
+        display ?
+          <View>
+            <Text>{name}</Text><Text>{pass}</Text><Text>{email}</Text>
+          </View> : null
+      }
+    </SafeAreaView>
+  )
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingHorizontal: 10,
+    backgroundColor:"#111",
+    paddingTop:25,
+  },
+  text: {
+    fontSize: 30,
+    textAlign: 'center',
+    justifyContent: 'center',
+    color: 'blue',
+    fontWeight: "bold",
+    marginBottom: 30
+  },
+  textInput: {
+    borderWidth: 1,
+    backgroundColor: '#000',
+    color: "#fff",
+    borderColor: "#ccc",
+    marginBottom: 15,
+    paddingHorizontal: 15,
+    maxHeight:50,
+    borderStyle:"dashed"
+  }
+})
 export default App;
