@@ -39,10 +39,12 @@ const App = () => {
   // )
   return(
     <View>
-      <Detail developerName="Developer Name: Shrey Patel" framework="Working Framework: React-Native" imgSrc={{
-          uri: 'https://reactnative.dev/img/tiny_logo.png',
+      <Detail developerName="Developer Name: John Doe" framework="Working Framework: React-Native" imgSrc={{
+          uri: 'https://cdn-icons-png.flaticon.com/512/4140/4140048.png',
         }} />
-      <Detail developerName="Developer Name: Shabbir Pathan" framework="Working Framework: Angular Developer" />
+      <Detail developerName="Developer Name: Martin Adam" framework="Working Framework: Angular Developer" imgSrc={{
+          uri: 'https://cdn-icons-png.flaticon.com/512/236/236831.png',
+        }} />
     </View>
   )
 };
