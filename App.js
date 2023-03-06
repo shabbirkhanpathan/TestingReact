@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { Text, View} from "react-native";
 import Detail from "./components/detail";
 
 
@@ -19,7 +19,7 @@ const App = () => {
   //   },
   //   {
   //     id:4,
-  //     name:"Ruen",
+  //     name:"Ruen",r
   //   },
   //   {
   //     id:5,
@@ -39,7 +39,10 @@ const App = () => {
   // )
   return(
     <View>
-      <Detail />
+      <Detail developerName="Developer Name: Shrey Patel" framework="Working Framework: React-Native" imgSrc={{
+          uri: 'https://reactnative.dev/img/tiny_logo.png',
+        }} />
+      <Detail developerName="Developer Name: Shabbir Pathan" framework="Working Framework: Angular Developer" />
     </View>
   )
 };
